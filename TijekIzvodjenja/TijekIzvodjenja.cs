@@ -13,10 +13,23 @@ namespace Vsite.CSharp
         public static void IspisTryCatchFinally(int djeljenjik, int djeljitelj)
         {
             // TODO: Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. Dodati kontrolne ispise gornjih poruka u svaki od tih blokova te provjeriti što će se ispisati.
+            try
+            {
+                Console.WriteLine(ZapočinjeBlokTry);
+                Console.WriteLine(djeljenjik / djeljitelj);
+                Console.WriteLine("Podijelio sam s {0}", djeljitelj);
+                Console.WriteLine(ZavršavaBlokTry);
+            }
+            catch(DivideByZeroException e)
+            {
+                Console.WriteLine(BlokCatch);
 
-            Console.WriteLine("Dijelim s {0}", djeljitelj);
-            Console.WriteLine(djeljenjik / djeljitelj);
-            Console.WriteLine("Podijelio sam s {0}", djeljitelj);
+            }
+            finally
+            {
+                Console.WriteLine(BlokFinally);
+            }
+           
 
         }
         static void Main(string[] args)
